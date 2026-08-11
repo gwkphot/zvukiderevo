@@ -1,11 +1,7 @@
 /* =========================================================
 PILIM И PILIM
-Optimized JS
-========================================================= */
-
-
-/* =========================================================
-INIT
+JS
+Анимации + повторный запуск после клика по фиксированному логотипу
 ========================================================= */
 
 
@@ -14,40 +10,59 @@ UTILS
 ========================================================= */
 
 function isMobile() {
+
     return window.matchMedia("(max-width: 768px)").matches;
+
 }
 
 
 /*
     Универсальный observer для появления элементов.
-
-    В отличие от ScrollTrigger он не зависит от sticky-позиции
-    карточки. Элемент действительно должен попасть в viewport,
-    после чего анимация запускается один раз.
 */
 
 function observeOnce(elements, callback, options = {}) {
 
     if (!elements || !elements.length) return;
 
-    const observer = new IntersectionObserver((entries, obs) => {
 
-        entries.forEach(entry => {
+    const observer = new IntersectionObserver(
 
-            if (!entry.isIntersecting) return;
+        (entries, obs) => {
 
-            callback(entry.target);
+            entries.forEach(entry => {
 
-            obs.unobserve(entry.target);
+                if (!entry.isIntersecting) return;
 
-        });
+                callback(entry.target);
 
-    }, {
-        threshold: options.threshold ?? 0.15,
-        rootMargin: options.rootMargin ?? "0px 0px -10% 0px"
+                obs.unobserve(entry.target);
+
+            });
+
+        },
+
+        {
+            threshold: options.threshold ?? 0.15,
+            rootMargin: options.rootMargin ?? "0px 0px -10% 0px"
+        }
+
+    );
+
+
+    elements.forEach(element => {
+
+        observer.observe(element);
+
     });
 
-    elements.forEach(element => observer.observe(element));
+
+    /*
+        Возвращаем observer, чтобы при необходимости
+        можно было его отключить.
+    */
+
+    return observer;
+
 }
 
 
@@ -57,27 +72,35 @@ HERO
 
 function initHero() {
 
-    const hero = document.querySelector(".hero-title");
+    const hero =
+        document.querySelector(".hero-title");
+
 
     if (!hero) return;
 
 
     /*
-        Не трогаем HTML повторно, если буквы уже были
-        преобразованы предыдущим запуском.
+        Разбиваем текст на буквы только один раз.
     */
 
     if (!hero.querySelector(".hero-letter")) {
 
-        const walker = document.createTreeWalker(
-            hero,
-            NodeFilter.SHOW_TEXT
-        );
+        const walker =
+            document.createTreeWalker(
+                hero,
+                NodeFilter.SHOW_TEXT
+            );
+
 
         const textNodes = [];
 
+
         while (walker.nextNode()) {
-            textNodes.push(walker.currentNode);
+
+            textNodes.push(
+                walker.currentNode
+            );
+
         }
 
 
@@ -96,6 +119,7 @@ function initHero() {
                     );
 
                     return;
+
                 }
 
 
@@ -131,19 +155,18 @@ function initHero() {
 
 
     const letters =
-        hero.querySelectorAll(".hero-letter");
+        hero.querySelectorAll(
+            ".hero-letter"
+        );
 
 
     if (!letters.length) return;
 
 
-    /*
-        Герой появляется сразу после загрузки.
-        Здесь observer не нужен.
-    */
-
     gsap.set(letters, {
+
         yPercent: 110
+
     });
 
 
@@ -169,24 +192,24 @@ MANIFEST
 function initManifest() {
 
     const block =
-        document.querySelector(".manifest-block");
+        document.querySelector(
+            ".manifest-block"
+        );
 
 
     if (!block) return;
 
 
-    /*
-        Разбиваем строки на слова и буквы.
-    */
-
     block.querySelectorAll(".line").forEach(line => {
 
-        /*
-            Защита от повторного преобразования.
-        */
+        if (
+            line.querySelector(
+                ".manifest-letter"
+            )
+        ) {
 
-        if (line.querySelector(".manifest-letter")) {
             return;
+
         }
 
 
@@ -237,7 +260,10 @@ function initManifest() {
             fragment.appendChild(wordWrap);
 
 
-            if (index < words.length - 1) {
+            if (
+                index <
+                words.length - 1
+            ) {
 
                 fragment.appendChild(
                     document.createTextNode(" ")
@@ -273,12 +299,10 @@ function initManifest() {
     });
 
 
-    /*
-        Observer следит именно за manifest-блоком.
-    */
-
     observeOnce(
+
         [block],
+
         () => {
 
             gsap.to(letters, {
@@ -298,10 +322,12 @@ function initManifest() {
             });
 
         },
+
         {
             threshold: 0.15,
             rootMargin: "0px 0px -15% 0px"
         }
+
     );
 
 }
@@ -355,7 +381,9 @@ function initSlogan() {
 
 
     observeOnce(
+
         [contact],
+
         () => {
 
             gsap.to(words, {
@@ -373,10 +401,12 @@ function initSlogan() {
             });
 
         },
+
         {
             threshold: 0.2,
             rootMargin: "0px 0px -10% 0px"
         }
+
     );
 
 }
@@ -411,7 +441,9 @@ function initSymbols() {
 
 
     observeOnce(
+
         symbols,
+
         symbol => {
 
             gsap.to(symbol, {
@@ -431,10 +463,12 @@ function initSymbols() {
             });
 
         },
+
         {
             threshold: 0.2,
             rootMargin: "0px 0px -10% 0px"
         }
+
     );
 
 }
@@ -462,7 +496,9 @@ function initCards() {
 
 
         const text =
-            card.querySelector(".text p");
+            card.querySelector(
+                ".text p"
+            );
 
 
         if (!title && !text) return;
@@ -499,7 +535,9 @@ function initCards() {
 
 
         observeOnce(
+
             [card],
+
             () => {
 
                 const timeline =
@@ -528,7 +566,9 @@ function initCards() {
                 if (text) {
 
                     timeline.to(
+
                         text,
+
                         {
 
                             y: 0,
@@ -542,16 +582,20 @@ function initCards() {
                             ease: "power2.out"
 
                         },
+
                         "-=0.45"
+
                     );
 
                 }
 
             },
+
             {
                 threshold: 0.15,
                 rootMargin: "0px 0px -10% 0px"
             }
+
         );
 
     });
@@ -591,9 +635,8 @@ function initTextReveals() {
 
     blocks.forEach(block => {
 
-
         /*
-            Не обрабатываем текст повторно.
+            Разбиваем текст только один раз.
         */
 
         if (
@@ -601,7 +644,63 @@ function initTextReveals() {
                 ".description-word"
             )
         ) {
+
+            /*
+                Даже если слова уже созданы,
+                observer создаём заново.
+            */
+
+            const words =
+                block.querySelectorAll(
+                    ".description-word"
+                );
+
+
+            gsap.set(words, {
+
+                y: 45,
+
+                opacity: 0,
+
+                filter: "blur(2px)"
+
+            });
+
+
+            observeOnce(
+
+                [block],
+
+                () => {
+
+                    gsap.to(words, {
+
+                        y: 0,
+
+                        opacity: 1,
+
+                        filter: "blur(0px)",
+
+                        duration: 0.7,
+
+                        stagger: 0.025,
+
+                        ease: "power2.out"
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.12,
+                    rootMargin: "0px 0px -8% 0px"
+                }
+
+            );
+
+
             return;
+
         }
 
 
@@ -626,12 +725,12 @@ function initTextReveals() {
 
         textNodes.forEach(node => {
 
-            /*
-                Не трогаем пустые текстовые узлы.
-            */
+            if (
+                !node.textContent.trim()
+            ) {
 
-            if (!node.textContent.trim()) {
                 return;
+
             }
 
 
@@ -656,6 +755,7 @@ function initTextReveals() {
                     );
 
                     return;
+
                 }
 
 
@@ -708,7 +808,9 @@ function initTextReveals() {
 
 
         observeOnce(
+
             [block],
+
             () => {
 
                 gsap.to(words, {
@@ -728,10 +830,12 @@ function initTextReveals() {
                 });
 
             },
+
             {
                 threshold: 0.12,
                 rootMargin: "0px 0px -8% 0px"
             }
+
         );
 
     });
@@ -786,6 +890,23 @@ function initGallery() {
     if (!image || !mobile) return;
 
 
+    /*
+        Не добавляем обработчики повторно.
+    */
+
+    if (
+        image.dataset.galleryInitialized
+    ) {
+
+        return;
+
+    }
+
+
+    image.dataset.galleryInitialized =
+        "true";
+
+
     let index = 0;
 
     let swapTimer = null;
@@ -794,7 +915,10 @@ function initGallery() {
     function changeGallery(nextIndex) {
 
         index =
-            (nextIndex + images.length) %
+            (
+                nextIndex +
+                images.length
+            ) %
             images.length;
 
 
@@ -802,34 +926,26 @@ function initGallery() {
             images[index];
 
 
-        clearTimeout(swapTimer);
+        clearTimeout(
+            swapTimer
+        );
 
 
-        /*
-            Сначала плавно скрываем старую картинку.
-        */
-
-        image.style.opacity = "0";
+        image.style.opacity =
+            "0";
 
 
         swapTimer =
             setTimeout(() => {
 
-                /*
-                    Mobile source.
-                */
-
                 mobile.srcset =
                     `images/gallery/mobile/${file}`;
 
 
-                /*
-                    Desktop image.
-                */
-
                 const reveal = () => {
 
-                    image.style.opacity = "1";
+                    image.style.opacity =
+                        "1";
 
 
                     image.removeEventListener(
@@ -850,15 +966,12 @@ function initGallery() {
                     `images/gallery/${file}`;
 
 
-                /*
-                    Cached image.
-                */
-
                 if (image.complete) {
 
                     requestAnimationFrame(() => {
 
-                        image.style.opacity = "1";
+                        image.style.opacity =
+                            "1";
 
                     });
 
@@ -927,57 +1040,72 @@ function initMobileContact() {
     if (!isMobile()) return;
 
 
-    /*
-        Здесь оставляем ScrollTrigger,
-        потому что это НЕ запуск появления блока.
-
-        Это непрерывная привязка движения логотипа
-        к позиции скролла.
-    */
-
     if (
-        typeof gsap !== "undefined" &&
-        typeof ScrollTrigger !== "undefined"
+        typeof gsap === "undefined" ||
+        typeof ScrollTrigger === "undefined"
     ) {
 
-        gsap.registerPlugin(
-            ScrollTrigger
-        );
+        return;
+
+    }
 
 
-        gsap.fromTo(
+    gsap.registerPlugin(
+        ScrollTrigger
+    );
 
-            contactLogo,
 
-            {
-                y: 0,
-                opacity: 1
-            },
+    /*
+        На случай повторного запуска
+        удаляем старый ScrollTrigger
+        именно для этого элемента.
+    */
 
-            {
-                y: -120,
+    ScrollTrigger.getAll().forEach(trigger => {
 
-                opacity: 0,
+        if (
+            trigger.vars &&
+            trigger.vars.trigger === contact
+        ) {
 
-                ease: "none",
+            trigger.kill();
 
-                scrollTrigger: {
+        }
 
-                    trigger: contact,
+    });
 
-                    start: "top top",
 
-                    end: "top -35%",
+    gsap.fromTo(
 
-                    scrub: true
+        contactLogo,
 
-                }
+        {
+            y: 0,
+            opacity: 1
+        },
+
+        {
+            y: -120,
+
+            opacity: 0,
+
+            ease: "none",
+
+            scrollTrigger: {
+
+                trigger: contact,
+
+                start: "top top",
+
+                end: "top -35%",
+
+                scrub: true
 
             }
 
-        );
+        }
 
-    }
+    );
 
 }
 
@@ -998,24 +1126,35 @@ function initFixedLogo() {
 
 
     /*
-        Ищем секции с тёмным фоном.
+        Не добавляем click повторно.
     */
+
+    if (
+        logo.dataset.restartInitialized
+    ) {
+
+        return;
+
+    }
+
+
+    logo.dataset.restartInitialized =
+        "true";
+
 
     const darkSections =
         document.querySelectorAll(
+
             [
                 ".dark-section",
                 ".black-section",
                 ".footer",
                 ".contact-block"
+
             ].join(",")
+
         );
 
-
-    /*
-        Если специальных классов нет,
-        определяем тёмные блоки по computed background.
-    */
 
     const sections =
         document.querySelectorAll(
@@ -1048,10 +1187,6 @@ function initFixedLogo() {
         let b =
             parseInt(match[3], 10) / 255;
 
-
-        /*
-            Относительная яркость.
-        */
 
         r =
             r <= 0.03928
@@ -1091,10 +1226,6 @@ function initFixedLogo() {
 
     function updateLogoColor() {
 
-        /*
-            Координата логотипа на экране.
-        */
-
         const logoRect =
             logo.getBoundingClientRect();
 
@@ -1112,11 +1243,6 @@ function initFixedLogo() {
         let isDark = false;
 
 
-        /*
-            Сначала проверяем реальные элементы,
-            которые находятся под логотипом.
-        */
-
         sections.forEach(section => {
 
             const rect =
@@ -1127,7 +1253,6 @@ function initFixedLogo() {
 
                 logoX >= rect.left &&
                 logoX <= rect.right &&
-
                 logoY >= rect.top &&
                 logoY <= rect.bottom
 
@@ -1149,11 +1274,9 @@ function initFixedLogo() {
                     );
 
 
-                /*
-                    Только действительно тёмный фон.
-                */
-
-                if (luminance < 0.35) {
+                if (
+                    luminance < 0.35
+                ) {
 
                     isDark = true;
 
@@ -1163,10 +1286,6 @@ function initFixedLogo() {
 
         });
 
-
-        /*
-            Явные тёмные секции имеют приоритет.
-        */
 
         darkSections.forEach(section => {
 
@@ -1178,7 +1297,6 @@ function initFixedLogo() {
 
                 logoX >= rect.left &&
                 logoX <= rect.right &&
-
                 logoY >= rect.top &&
                 logoY <= rect.bottom
 
@@ -1198,14 +1316,6 @@ function initFixedLogo() {
 
     }
 
-
-    /*
-        Не делаем тяжёлый layout-recalc
-        на каждом пикселе scroll.
-
-        requestAnimationFrame объединяет
-        несколько событий скролла в один кадр.
-    */
 
     let ticking = false;
 
@@ -1247,16 +1357,11 @@ function initFixedLogo() {
     );
 
 
-    /*
-        Первоначальное состояние.
-    */
-
     updateLogoColor();
 
 
     /*
-        На мобильном логотип может менять
-        положение относительно контактного блока.
+        Позиция логотипа на контактном блоке.
     */
 
     if (isMobile()) {
@@ -1312,6 +1417,385 @@ function initFixedLogo() {
 
     }
 
+
+    /* =====================================================
+       RESTART ПО КЛИКУ
+    ===================================================== */
+
+    logo.addEventListener(
+        "click",
+        event => {
+
+            event.preventDefault();
+
+
+            /*
+                Не запускаем ничего сразу.
+
+                Сначала действительно возвращаемся
+                в начало страницы.
+            */
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+
+            /*
+                Ждём, пока scroll реально дойдёт
+                до верхней точки.
+            */
+
+            let waiting = true;
+
+
+            function waitForTop() {
+
+                if (!waiting) return;
+
+
+                const currentY =
+                    window.scrollY ||
+                    window.pageYOffset ||
+                    0;
+
+
+                if (currentY <= 2) {
+
+                    waiting = false;
+
+
+                    window.removeEventListener(
+                        "scroll",
+                        waitForTop
+                    );
+
+
+                    /*
+                        Теперь, когда мы уже в начале,
+                        полностью возвращаем анимации
+                        в исходное состояние.
+                    */
+
+                    restartAnimations();
+
+                    return;
+
+                }
+
+
+                requestAnimationFrame(
+                    waitForTop
+                );
+
+            }
+
+
+            window.addEventListener(
+                "scroll",
+                waitForTop,
+                {
+                    passive: true
+                }
+            );
+
+
+            /*
+                Запускаем проверку сразу.
+                Это важно, если страница уже
+                практически находится вверху.
+            */
+
+            waitForTop();
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+RESTART ALL ANIMATIONS
+========================================================= */
+
+function restartAnimations() {
+
+    /*
+        Убиваем текущие GSAP-анимации.
+    */
+
+    gsap.killTweensOf(
+        document.querySelectorAll(
+            [
+                ".hero-letter",
+                ".manifest-letter",
+                ".slogan-line .word",
+                ".symbol img",
+                ".card-block h2",
+                ".card-block .text p",
+                ".description-word",
+                ".contact-end-logo"
+            ].join(",")
+        )
+    );
+
+
+    /*
+        Уничтожаем старые ScrollTrigger,
+        чтобы они не дублировались.
+    */
+
+    if (
+        typeof ScrollTrigger !== "undefined"
+    ) {
+
+        ScrollTrigger
+            .getAll()
+            .forEach(trigger => {
+
+                trigger.kill();
+
+            });
+
+    }
+
+
+    /*
+        Возвращаем все анимируемые элементы
+        в исходное состояние.
+
+        После этого заново запускаем
+        существующие функции.
+    */
+
+    const heroLetters =
+        document.querySelectorAll(
+            ".hero-letter"
+        );
+
+
+    if (heroLetters.length) {
+
+        gsap.set(heroLetters, {
+
+            yPercent: 110
+
+        });
+
+    }
+
+
+    const manifestLetters =
+        document.querySelectorAll(
+            ".manifest-letter"
+        );
+
+
+    if (manifestLetters.length) {
+
+        gsap.set(manifestLetters, {
+
+            y: 35,
+
+            opacity: 0,
+
+            filter: "blur(2px)"
+
+        });
+
+    }
+
+
+    const sloganWords =
+        document.querySelectorAll(
+            ".slogan-line .word"
+        );
+
+
+    if (sloganWords.length) {
+
+        gsap.set(sloganWords, {
+
+            y: 70,
+
+            opacity: 0
+
+        });
+
+    }
+
+
+    const symbols =
+        document.querySelectorAll(
+            ".symbol img"
+        );
+
+
+    if (symbols.length) {
+
+        gsap.set(symbols, {
+
+            scale: 0.82,
+
+            opacity: 0,
+
+            filter: "blur(8px)",
+
+            y: 30
+
+        });
+
+    }
+
+
+    document
+        .querySelectorAll(
+            ".card-block h2"
+        )
+        .forEach(title => {
+
+            gsap.set(title, {
+
+                y: 30,
+
+                opacity: 0,
+
+                filter: "blur(3px)"
+
+            });
+
+        });
+
+
+    document
+        .querySelectorAll(
+            ".card-block .text p"
+        )
+        .forEach(text => {
+
+            gsap.set(text, {
+
+                y: 25,
+
+                opacity: 0,
+
+                filter: "blur(2px)"
+
+            });
+
+        });
+
+
+    const descriptionWords =
+        document.querySelectorAll(
+            ".description-word"
+        );
+
+
+    if (descriptionWords.length) {
+
+        gsap.set(descriptionWords, {
+
+            y: 45,
+
+            opacity: 0,
+
+            filter: "blur(2px)"
+
+        });
+
+    }
+
+
+    const contactLogo =
+        document.querySelector(
+            ".contact-end-logo"
+        );
+
+
+    if (contactLogo) {
+
+        gsap.set(contactLogo, {
+
+            y: 0,
+
+            opacity: 1
+
+        });
+
+    }
+
+
+    /*
+        Обновляем ScrollTrigger после
+        возврата страницы в начало.
+    */
+
+    if (
+        typeof ScrollTrigger !== "undefined"
+    ) {
+
+        ScrollTrigger.refresh();
+
+    }
+
+
+    /*
+        Теперь заново запускаем ВСЮ
+        существующую систему.
+
+        Hero снова запускается сразу,
+        остальные элементы снова ждут
+        своего появления при скролле.
+    */
+
+    initHero();
+
+    initManifest();
+
+    initSlogan();
+
+    initSymbols();
+
+    initCards();
+
+    initTextReveals();
+
+    initMobileContact();
+
+
+    /*
+        Обновляем состояние фиксированного
+        логотипа.
+    */
+
+    requestAnimationFrame(() => {
+
+        const logo =
+            document.querySelector(
+                ".logo-fixed"
+            );
+
+
+        if (logo) {
+
+            /*
+                Принудительно обновляем цвет
+                после возврата наверх.
+            */
+
+            window.dispatchEvent(
+                new Event("scroll")
+            );
+
+        }
+
+    });
+
 }
 
 
@@ -1320,8 +1804,26 @@ START
 ========================================================= */
 
 document.addEventListener(
+
     "DOMContentLoaded",
+
     () => {
+
+        /*
+            Регистрируем ScrollTrigger один раз.
+        */
+
+        if (
+            typeof gsap !== "undefined" &&
+            typeof ScrollTrigger !== "undefined"
+        ) {
+
+            gsap.registerPlugin(
+                ScrollTrigger
+            );
+
+        }
+
 
         initHero();
 
@@ -1342,4 +1844,5 @@ document.addEventListener(
         initFixedLogo();
 
     }
+
 );
