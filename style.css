@@ -1,3 +1,63 @@
+```css
+/* =========================================================
+PILIM И PILIM
+LOCAL FONT SYSTEM
+========================================================= */
+
+
+/* =========================================================
+LOCAL FONTS
+========================================================= */
+
+@font-face{
+
+    font-family:'Inter';
+
+    src:url('fonts/Inter-Medium.ttf') format('truetype');
+
+    font-weight:500;
+
+    font-style:normal;
+
+    font-display:swap;
+
+}
+
+
+@font-face{
+
+    font-family:'Inter';
+
+    src:url('fonts/Inter-Bold.ttf') format('truetype');
+
+    font-weight:700;
+
+    font-style:normal;
+
+    font-display:swap;
+
+}
+
+
+@font-face{
+
+    font-family:'Montserrat';
+
+    src:url('fonts/Montserrat-ExtraBold.ttf') format('truetype');
+
+    font-weight:800;
+
+    font-style:normal;
+
+    font-display:swap;
+
+}
+
+
+/* =========================================================
+RESET
+========================================================= */
+
 *{
     margin:0;
     padding:0;
@@ -13,6 +73,7 @@ html{
 body{
 
     background:#d9d9d9;
+
     text-rendering:optimizeLegibility;
 
     font-family:'Inter',sans-serif;
@@ -24,11 +85,9 @@ body{
 }
 
 
-
-/* =========================
+/* =========================================================
 MAIN STICKY STACK
-========================= */
-
+========================================================= */
 
 .main-stack{
 
@@ -37,7 +96,6 @@ MAIN STICKY STACK
     width:100%;
 
 }
-
 
 
 .stack-card{
@@ -53,15 +111,9 @@ MAIN STICKY STACK
 }
 
 
-
-
-
-
-
-/* =========================
+/* =========================================================
 HERO
-========================= */
-
+========================================================= */
 
 .hero-block{
 
@@ -76,8 +128,8 @@ HERO
 }
 
 
-
 .hero-title{
+
     contain:layout style;
 
     font-family:'Montserrat',sans-serif;
@@ -96,9 +148,10 @@ HERO
 
 }
 
-/* =========================
+
+/* =========================================================
 MANIFEST
-========================= */
+========================================================= */
 
 .manifest-block{
 
@@ -119,7 +172,6 @@ MANIFEST
 }
 
 
-
 .manifest-content{
 
     width:100%;
@@ -135,7 +187,6 @@ MANIFEST
 }
 
 
-
 .manifest-content h1{
 
     margin:0;
@@ -144,7 +195,7 @@ MANIFEST
 
     font-family:'Inter',sans-serif;
 
-    font-weight:600;
+    font-weight:500;
 
     font-size:clamp(64px,6.5vw,110px);
 
@@ -157,7 +208,6 @@ MANIFEST
 }
 
 
-
 .manifest-content h1 .line{
 
     display:block;
@@ -167,10 +217,9 @@ MANIFEST
 }
 
 
-
-/* =========================
+/* =========================================================
 TABLET
-========================= */
+========================================================= */
 
 @media(max-width:1024px){
 
@@ -190,10 +239,9 @@ TABLET
 }
 
 
-
-/* =========================
+/* =========================================================
 MOBILE
-========================= */
+========================================================= */
 
 @media(max-width:768px){
 
@@ -257,10 +305,9 @@ MOBILE
 }
 
 
-
-/* =========================
+/* =========================================================
 SMALL MOBILE
-========================= */
+========================================================= */
 
 @media(max-width:480px){
 
@@ -284,17 +331,15 @@ SMALL MOBILE
 }
 
 
-
-/* =========================
+/* =========================================================
 IMAGE LAYERS
-========================= */
+========================================================= */
 
 .image-card{
 
     width:100%;
 
 }
-
 
 
 .image-card img{
@@ -308,7 +353,6 @@ IMAGE LAYERS
     display:block;
 
 }
-
 
 
 @media(max-width:768px){
@@ -347,74 +391,15 @@ IMAGE LAYERS
 
 }
 
-/* =========================
-IMAGE LAYERS
-========================= */
 
-
-.image-card{
-
-    width:100%;
-
-}
-
-
-
-.image-card img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    display:block;
-
-}
-
-@media(max-width:768px){
-
-    .stack-card.image-card{
-
-        height:auto;
-
-        aspect-ratio:auto;
-
-    }
-
-
-    .stack-card.image-card picture{
-
-        display:block;
-
-        width:100%;
-
-        height:auto;
-
-    }
-
-
-    .stack-card.image-card img{
-
-        display:block;
-
-        width:100%;
-
-        height:auto;
-
-        object-fit:contain;
-
-    }
-
-}
-
-
-/* =========================
+/* =========================================================
 DESCRIPTION
-========================= */
+========================================================= */
 
 .description-block{
+
     width:100%;
+
     min-height:100vh;
 
     background:#bdbdb8;
@@ -422,71 +407,110 @@ DESCRIPTION
     padding:8px 16px 16px;
 
     display:flex;
+
     align-items:flex-start;
+
     justify-content:flex-start;
 
     box-sizing:border-box;
+
 }
 
+
 .description-block p{
+
     margin:0;
 
     width:100%;
+
     max-width:none;
 
     font-family:'Inter',sans-serif;
+
     font-weight:500;
+
     font-size:clamp(30px,3vw,54px);
+
     line-height:1.05;
+
     letter-spacing:-.04em;
+
     color:#333;
+
 }
 
 
+/* =========================================================
+DESCRIPTION — TABLET
+========================================================= */
 
-/* Планшеты */
-@media (max-width:1024px){
+@media(max-width:1024px){
 
     .description-block{
+
         padding:8px 14px 14px;
+
     }
 
+
     .description-block p{
+
         font-size:clamp(28px,4vw,44px);
+
     }
 
 }
 
-/* Телефоны */
-@media (max-width:768px){
+
+/* =========================================================
+DESCRIPTION — MOBILE
+========================================================= */
+
+@media(max-width:768px){
 
     .description-block{
+
         padding:6px 10px 10px;
+
     }
 
+
     .description-block p{
+
         font-size:clamp(24px,8vw,36px);
+
     }
 
 }
 
-/* Очень маленькие телефоны */
-@media (max-width:480px){
+
+/* =========================================================
+DESCRIPTION — SMALL MOBILE
+========================================================= */
+
+@media(max-width:480px){
 
     .description-block{
+
         padding:4px 8px 8px;
+
     }
 
+
     .description-block p{
+
         font-size:24px;
+
         line-height:1.03;
+
     }
 
 }
 
-/* =========================
+
+/* =========================================================
 CARDS
-========================= */
+========================================================= */
 
 .card-block{
 
@@ -499,10 +523,9 @@ CARDS
 }
 
 
-
-/* =========================
+/* =========================================================
 HALF
-========================= */
+========================================================= */
 
 .half{
 
@@ -517,17 +540,15 @@ HALF
 }
 
 
-
-/* =========================
+/* =========================================================
 COLORS
-========================= */
+========================================================= */
 
 .orange{
 
     background:#FF6716;
 
 }
-
 
 
 .green{
@@ -537,7 +558,6 @@ COLORS
 }
 
 
-
 .purple{
 
     background:#7182CB;
@@ -545,10 +565,9 @@ COLORS
 }
 
 
-
-/* =========================
+/* =========================================================
 SYMBOLS
-========================= */
+========================================================= */
 
 .symbol img{
 
@@ -561,10 +580,9 @@ SYMBOLS
 }
 
 
-
-/* =========================
+/* =========================================================
 TEXT
-========================= */
+========================================================= */
 
 .text{
 
@@ -585,16 +603,15 @@ TEXT
 }
 
 
-
-/* =========================
+/* =========================================================
 TITLE
-========================= */
+========================================================= */
 
 .text h2{
 
     font-family:'Inter',sans-serif;
 
-    font-weight:600;
+    font-weight:700;
 
     font-size:clamp(42px,3.2vw,60px);
 
@@ -611,23 +628,9 @@ TITLE
 }
 
 
-
-/* =========================
-TEXT PARAGRAPH
-========================= */
-
-.text p{
-
-    margin:0;
-
-    max-width:700px;
-
-}
-
-
-/* =========================
+/* =========================================================
 TEXT DESCRIPTION
-========================= */
+========================================================= */
 
 .text p{
 
@@ -650,20 +653,17 @@ TEXT DESCRIPTION
 }
 
 
-
-/* =========================
+/* =========================================================
 TABLET
-========================= */
+========================================================= */
 
 @media(max-width:1024px){
-
 
     .text{
 
         padding:50px;
 
     }
-
 
 
     .text h2{
@@ -673,13 +673,11 @@ TABLET
     }
 
 
-
     .text p{
 
         font-size:24px;
 
     }
-
 
 
     .symbol img{
@@ -690,17 +688,14 @@ TABLET
 
     }
 
-
 }
 
 
-
-/* =========================
+/* =========================================================
 MOBILE CARDS
-========================= */
+========================================================= */
 
 @media(max-width:768px){
-
 
     .card-block{
 
@@ -709,7 +704,6 @@ MOBILE CARDS
         flex-direction:column;
 
     }
-
 
 
     .symbol{
@@ -723,7 +717,6 @@ MOBILE CARDS
     }
 
 
-
     .symbol img{
 
         width:90%;
@@ -731,7 +724,6 @@ MOBILE CARDS
         height:90%;
 
     }
-
 
 
     .text{
@@ -751,7 +743,6 @@ MOBILE CARDS
     }
 
 
-
     .text h2{
 
         font-size:34px;
@@ -761,7 +752,6 @@ MOBILE CARDS
         letter-spacing:-.055em;
 
     }
-
 
 
     .text p{
@@ -774,17 +764,14 @@ MOBILE CARDS
 
     }
 
-
 }
 
 
-
-/* =========================
+/* =========================================================
 SMALL MOBILE
-========================= */
+========================================================= */
 
 @media(max-width:480px){
-
 
     .text{
 
@@ -793,13 +780,11 @@ SMALL MOBILE
     }
 
 
-
     .text h2{
 
         font-size:30px;
 
     }
-
 
 
     .text p{
@@ -810,13 +795,12 @@ SMALL MOBILE
 
     }
 
-
 }
 
-/* =========================
-FIXED LOGO
-========================= */
 
+/* =========================================================
+FIXED LOGO
+========================================================= */
 
 .logo-fixed{
 
@@ -849,7 +833,6 @@ FIXED LOGO
 }
 
 
-
 .logo-fixed img{
 
     width:75%;
@@ -863,13 +846,11 @@ FIXED LOGO
 }
 
 
-
 .logo-fixed:hover{
 
     background:#111;
 
 }
-
 
 
 .logo-fixed:hover img{
@@ -879,56 +860,79 @@ FIXED LOGO
 }
 
 
-
-/* =========================
-   FIXED LOGO — GRAY STATE
-========================= */
+/* =========================================================
+FIXED LOGO — GRAY STATE
+========================================================= */
 
 .logo-fixed.dark{
+
     border-color:#D9D9D9;
+
 }
+
 
 .logo-fixed.dark img{
+
     content:url("images/logo-gray.svg");
+
 }
 
-/* =========================
-   DARK LOGO — HOVER
-========================= */
+
+/* =========================================================
+DARK LOGO — HOVER
+========================================================= */
 
 .logo-fixed.dark:hover{
+
     background:#98E915;
+
     border-color:#111;
+
 }
+
 
 .logo-fixed.dark:hover img{
-    content:url("images/logo.svg");
-    filter:none;
-}
-/* =========================
-   FIXED LOGO — MOBILE
-========================= */
 
-@media (max-width:768px){
+    content:url("images/logo.svg");
+
+    filter:none;
+
+}
+
+
+/* =========================================================
+FIXED LOGO — MOBILE
+========================================================= */
+
+@media(max-width:768px){
 
     .logo-fixed{
+
         width:44px;
+
         height:44px;
+
         top:20px;
+
         right:20px;
+
     }
 
+
     .logo-fixed img{
+
         width:75%;
+
         height:75%;
+
     }
 
 }
 
 
-/* =========================
+/* =========================================================
 MOBILE CONTACT LOGO POSITION
-========================= */
+========================================================= */
 
 @media(max-width:768px){
 
@@ -943,10 +947,9 @@ MOBILE CONTACT LOGO POSITION
 }
 
 
-/* =========================
+/* =========================================================
 LETTER ANIMATION
-========================= */
-
+========================================================= */
 
 .hero-letter-wrap{
 
@@ -959,8 +962,8 @@ LETTER ANIMATION
 }
 
 
-
 .hero-letter{
+
     will-change:transform;
 
     display:inline-block;
@@ -968,14 +971,9 @@ LETTER ANIMATION
 }
 
 
-
-
-
-
-
-/* =========================
+/* =========================================================
 МАСТЕР-КЛАССЫ
-========================= */
+========================================================= */
 
 .workshops-block{
 
@@ -998,14 +996,13 @@ LETTER ANIMATION
 }
 
 
-
 .workshops-block h2{
 
     margin:0 0 24px;
 
     font-family:'Inter',sans-serif;
 
-    font-weight:600;
+    font-weight:700;
 
     font-size:clamp(50px,4.4vw,76px);
 
@@ -1016,7 +1013,6 @@ LETTER ANIMATION
     color:#7182CB;
 
 }
-
 
 
 .workshops-block p{
@@ -1042,19 +1038,17 @@ LETTER ANIMATION
 }
 
 
+/* =========================================================
+WORKSHOPS — TABLET
+========================================================= */
 
-/* =========================
-TABLET
-========================= */
-
-@media (max-width:1024px){
+@media(max-width:1024px){
 
     .workshops-block{
 
         padding:8px 14px 20px;
 
     }
-
 
 
     .workshops-block h2{
@@ -1066,7 +1060,6 @@ TABLET
     }
 
 
-
     .workshops-block p{
 
         font-size:clamp(26px,3vw,34px);
@@ -1076,19 +1069,17 @@ TABLET
 }
 
 
+/* =========================================================
+WORKSHOPS — MOBILE
+========================================================= */
 
-/* =========================
-MOBILE
-========================= */
-
-@media (max-width:768px){
+@media(max-width:768px){
 
     .workshops-block{
 
         padding:6px 10px 40px;
 
     }
-
 
 
     .workshops-block h2{
@@ -1098,7 +1089,6 @@ MOBILE
         margin-bottom:16px;
 
     }
-
 
 
     .workshops-block p{
@@ -1112,19 +1102,17 @@ MOBILE
 }
 
 
+/* =========================================================
+WORKSHOPS — SMALL MOBILE
+========================================================= */
 
-/* =========================
-SMALL MOBILE
-========================= */
-
-@media (max-width:480px){
+@media(max-width:480px){
 
     .workshops-block{
 
         padding:4px 8px 40px;
 
     }
-
 
 
     .workshops-block h2{
@@ -1134,7 +1122,6 @@ SMALL MOBILE
         margin-bottom:14px;
 
     }
-
 
 
     .workshops-block p{
@@ -1148,10 +1135,9 @@ SMALL MOBILE
 }
 
 
-
-/* =========================
+/* =========================================================
 ДЖЕМЫ
-========================= */
+========================================================= */
 
 .jams-block{
 
@@ -1174,12 +1160,11 @@ SMALL MOBILE
 }
 
 
-
 .jams-block h2{
 
-    font-family:'Inter', sans-serif;
+    font-family:'Inter',sans-serif;
 
-    font-weight:600;
+    font-weight:700;
 
     font-size:clamp(52px,4.5vw,78px);
 
@@ -1194,10 +1179,9 @@ SMALL MOBILE
 }
 
 
-
 .jams-block p{
 
-    font-family:'Inter', sans-serif;
+    font-family:'Inter',sans-serif;
 
     font-weight:500;
 
@@ -1218,19 +1202,17 @@ SMALL MOBILE
 }
 
 
+/* =========================================================
+JAMS — TABLET
+========================================================= */
 
-/* =========================
-TABLET
-========================= */
-
-@media (max-width:1024px){
+@media(max-width:1024px){
 
     .jams-block{
 
         padding:8px 14px 20px;
 
     }
-
 
 
     .jams-block h2{
@@ -1242,7 +1224,6 @@ TABLET
     }
 
 
-
     .jams-block p{
 
         font-size:clamp(28px,3.2vw,38px);
@@ -1252,19 +1233,17 @@ TABLET
 }
 
 
+/* =========================================================
+JAMS — MOBILE
+========================================================= */
 
-/* =========================
-MOBILE
-========================= */
-
-@media (max-width:768px){
+@media(max-width:768px){
 
     .jams-block{
 
         padding:6px 10px 40px;
 
     }
-
 
 
     .jams-block h2{
@@ -1274,7 +1253,6 @@ MOBILE
         margin-bottom:16px;
 
     }
-
 
 
     .jams-block p{
@@ -1288,19 +1266,17 @@ MOBILE
 }
 
 
+/* =========================================================
+JAMS — SMALL MOBILE
+========================================================= */
 
-/* =========================
-SMALL MOBILE
-========================= */
-
-@media (max-width:480px){
+@media(max-width:480px){
 
     .jams-block{
 
         padding:4px 8px 40px;
 
     }
-
 
 
     .jams-block h2{
@@ -1310,7 +1286,6 @@ SMALL MOBILE
         margin-bottom:14px;
 
     }
-
 
 
     .jams-block p{
@@ -1324,99 +1299,125 @@ SMALL MOBILE
 }
 
 
-/* =========================
+/* =========================================================
 РАСПИСАНИЕ
-========================= */
+========================================================= */
 
 .meetings-block{
+
     background:#292929;
 
     width:100%;
+
     min-height:100vh;
 
     display:flex;
+
     flex-direction:column;
+
     justify-content:flex-start;
 
     padding:8px 16px 16px;
 
     box-sizing:border-box;
+
 }
 
+
 .meetings-block p{
-    font-family:'Inter', sans-serif;
+
+    font-family:'Inter',sans-serif;
+
     font-weight:500;
 
-    /* немного увеличил */
     font-size:clamp(30px,2.45vw,46px);
 
     line-height:1.12;
+
     letter-spacing:-.035em;
 
     width:100%;
+
     max-width:none;
 
     margin:0;
 
     color:#D9D9D9;
+
 }
 
 
-/* =========================
-TABLET
-========================= */
+/* =========================================================
+MEETINGS — TABLET
+========================================================= */
 
-@media (max-width:1024px){
+@media(max-width:1024px){
 
     .meetings-block{
+
         padding:8px 14px 20px;
+
     }
 
+
     .meetings-block p{
+
         font-size:clamp(28px,3.2vw,38px);
+
     }
 
 }
 
 
-/* =========================
-MOBILE
-========================= */
+/* =========================================================
+MEETINGS — MOBILE
+========================================================= */
 
-@media (max-width:768px){
+@media(max-width:768px){
 
     .meetings-block{
+
         padding:6px 10px 60px;
-        /* запас снизу для комфортного скролла */
+
     }
 
+
     .meetings-block p{
+
         font-size:24px;
+
         line-height:1.15;
+
     }
 
 }
 
 
-/* =========================
-SMALL MOBILE
-========================= */
+/* =========================================================
+MEETINGS — SMALL MOBILE
+========================================================= */
 
-@media (max-width:480px){
+@media(max-width:480px){
 
     .meetings-block{
+
         padding:4px 8px 70px;
+
     }
 
+
     .meetings-block p{
+
         font-size:22px;
+
     }
 
 }
 
-/* =========================
+
+/* =========================================================
 GALLERY
-========================= */
+========================================================= */
 
 .gallery-card{
 
@@ -1424,11 +1425,6 @@ GALLERY
 
 }
 
-
-
-/* =========================
-GALLERY CONTAINER
-========================= */
 
 .gallery-container{
 
@@ -1439,7 +1435,6 @@ GALLERY CONTAINER
     position:relative;
 
 }
-
 
 
 .gallery-container picture{
@@ -1453,8 +1448,8 @@ GALLERY CONTAINER
 }
 
 
-
 .gallery-container img{
+
     will-change:opacity;
 
     width:100%;
@@ -1470,10 +1465,9 @@ GALLERY CONTAINER
 }
 
 
-
-/* =========================
+/* =========================================================
 GALLERY UI
-========================= */
+========================================================= */
 
 .gallery-ui{
 
@@ -1494,7 +1488,6 @@ GALLERY UI
 }
 
 
-
 .gallery-arrow{
 
     pointer-events:auto;
@@ -1505,7 +1498,7 @@ GALLERY UI
 
     color:#D9D9D9;
 
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
 
     font-size:90px;
 
@@ -1522,7 +1515,6 @@ GALLERY UI
 }
 
 
-
 .gallery-arrow:hover{
 
     opacity:1;
@@ -1532,13 +1524,11 @@ GALLERY UI
 }
 
 
-
 .gallery-prev{
 
     transform:translateX(0);
 
 }
-
 
 
 .gallery-next{
@@ -1548,10 +1538,9 @@ GALLERY UI
 }
 
 
-
-/* =========================
-MOBILE
-========================= */
+/* =========================================================
+GALLERY — MOBILE
+========================================================= */
 
 @media(max-width:768px){
 
@@ -1566,7 +1555,6 @@ MOBILE
         height:auto;
 
     }
-
 
 
     .gallery-container{
@@ -1584,7 +1572,6 @@ MOBILE
     }
 
 
-
     .gallery-container picture{
 
         display:block;
@@ -1596,9 +1583,9 @@ MOBILE
     }
 
 
-
     .gallery-container img{
-    will-change:opacity;
+
+        will-change:opacity;
 
         width:100%;
 
@@ -1610,11 +1597,6 @@ MOBILE
 
     }
 
-
-
-    /* =========================
-    GALLERY UI
-    ========================= */
 
     .gallery-ui{
 
@@ -1639,7 +1621,6 @@ MOBILE
     }
 
 
-
     .gallery-arrow{
 
         font-size:60px;
@@ -1649,13 +1630,11 @@ MOBILE
     }
 
 
-
     .gallery-progress{
 
         margin:0 18px;
 
     }
-
 
 
     #gallery-counter{
@@ -1666,9 +1645,10 @@ MOBILE
 
 }
 
-/* =========================
+
+/* =========================================================
 CONTACT BLOCK
-========================= */
+========================================================= */
 
 .contact-block{
 
@@ -1691,10 +1671,9 @@ CONTACT BLOCK
 }
 
 
-
-/* =========================
+/* =========================================================
 CONTACT BIG LOGO TOP
-========================= */
+========================================================= */
 
 .contact-end-logo{
 
@@ -1727,7 +1706,6 @@ CONTACT BIG LOGO TOP
 }
 
 
-
 .contact-end-logo:hover{
 
     color:#98E915;
@@ -1735,10 +1713,9 @@ CONTACT BIG LOGO TOP
 }
 
 
-
-/* =========================
+/* =========================================================
 SLOGAN
-========================= */
+========================================================= */
 
 .slogan-line{
 
@@ -1769,13 +1746,11 @@ SLOGAN
 }
 
 
-
 .slogan-line .word{
 
     display:inline-block;
 
 }
-
 
 
 .slogan-line .green{
@@ -1785,10 +1760,9 @@ SLOGAN
 }
 
 
-
-/* =========================
+/* =========================================================
 CONTACT BOTTOM
-========================= */
+========================================================= */
 
 .contact-bottom{
 
@@ -1805,7 +1779,6 @@ CONTACT BOTTOM
 }
 
 
-
 .contact-left{
 
     width:40%;
@@ -1819,7 +1792,6 @@ CONTACT BOTTOM
 }
 
 
-
 .contact-socials{
 
     display:flex;
@@ -1831,12 +1803,11 @@ CONTACT BOTTOM
 }
 
 
-
 .contact-socials a{
 
     font-family:'Inter',sans-serif;
 
-    font-weight:600;
+    font-weight:700;
 
     font-size:clamp(34px,2.6vw,54px);
 
@@ -1853,13 +1824,11 @@ CONTACT BOTTOM
 }
 
 
-
 .contact-socials a:nth-child(1):hover{
 
     color:#FF6716;
 
 }
-
 
 
 .contact-socials a:nth-child(2):hover{
@@ -1869,7 +1838,6 @@ CONTACT BOTTOM
 }
 
 
-
 .contact-socials a:nth-child(3):hover{
 
     color:#7182CB;
@@ -1877,10 +1845,9 @@ CONTACT BOTTOM
 }
 
 
-
-/* =========================
+/* =========================================================
 EMAIL
-========================= */
+========================================================= */
 
 .contact-input{
 
@@ -1891,7 +1858,6 @@ EMAIL
     max-width:460px;
 
 }
-
 
 
 .contact-input input{
@@ -1908,6 +1874,10 @@ EMAIL
 
     color:#D9D9D9;
 
+    font-family:'Inter',sans-serif;
+
+    font-weight:500;
+
     font-size:24px;
 
     padding:14px 0;
@@ -1917,13 +1887,11 @@ EMAIL
 }
 
 
-
 .contact-input input::placeholder{
 
     color:#777;
 
 }
-
 
 
 .contact-input button{
@@ -1940,10 +1908,13 @@ EMAIL
 
     color:#D9D9D9;
 
+    font-family:'Inter',sans-serif;
+
+    font-weight:700;
+
     font-size:42px;
 
 }
-
 
 
 .contact-input button:hover{
@@ -1955,10 +1926,9 @@ EMAIL
 }
 
 
-
-/* =========================
+/* =========================================================
 CONTACT RIGHT
-========================= */
+========================================================= */
 
 .contact-right{
 
@@ -1967,12 +1937,15 @@ CONTACT RIGHT
 }
 
 
-
 .contact-right span{
 
     display:block;
 
     color:#8e8e8e;
+
+    font-family:'Inter',sans-serif;
+
+    font-weight:500;
 
     font-size:22px;
 
@@ -1981,12 +1954,11 @@ CONTACT RIGHT
 }
 
 
-
 .contact-right h2{
 
     font-family:'Inter',sans-serif;
 
-    font-weight:600;
+    font-weight:700;
 
     font-size:clamp(38px,3.5vw,64px);
 
@@ -1997,10 +1969,9 @@ CONTACT RIGHT
 }
 
 
-
-/* =========================
-TABLET
-========================= */
+/* =========================================================
+CONTACT — TABLET
+========================================================= */
 
 @media(max-width:1024px){
 
@@ -2011,13 +1982,11 @@ TABLET
     }
 
 
-
     .contact-left{
 
         width:45%;
 
     }
-
 
 
     .slogan-line{
@@ -2029,10 +1998,9 @@ TABLET
 }
 
 
-
-/* =========================
-MOBILE
-========================= */
+/* =========================================================
+CONTACT — MOBILE
+========================================================= */
 
 @media(max-width:768px){
 
@@ -2053,10 +2021,9 @@ MOBILE
     }
 
 
-
-    /* =========================
-    CONTACT BIG LOGO
-    ========================= */
+    /* =====================================================
+       CONTACT BIG LOGO
+    ===================================================== */
 
     .contact-end-logo{
 
@@ -2085,64 +2052,102 @@ MOBILE
     }
 
 
+    /* =====================================================
+       CONTACT SLOGAN
+    ===================================================== */
 
-/* =========================================================
-   CONTACT SLOGAN
-========================================================= */
+    .slogan-line{
 
-.slogan-line {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: .28em;
-    margin-top: 60px;
+        width:100%;
 
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: clamp(28px, 2.5vw, 48px);
-    line-height: 1;
-    letter-spacing: -.055em;
-    white-space: nowrap;
-}
+        display:flex;
 
-.slogan-line .word {
-    display: inline-block;
-}
+        justify-content:center;
 
-.slogan-line .light {
-    color: #D9D9D9;
-}
+        align-items:center;
 
-.slogan-line .slogan-accent {
-    color: #7182CB !important;
-    -webkit-text-fill-color: #7182CB !important;
-    -webkit-text-stroke: 0 !important;
-    text-shadow: none !important;
-    filter: none !important;
-}
+        gap:.28em;
 
-@media (max-width: 768px) {
+        margin-top:60px;
 
-    .slogan-line {
-        margin-top: 40px;
-        gap: .22em;
-        font-size: clamp(24px, 7vw, 36px);
+        font-family:'Inter',sans-serif;
+
+        font-weight:700;
+
+        font-size:clamp(28px,2.5vw,48px);
+
+        line-height:1;
+
+        letter-spacing:-.055em;
+
+        white-space:nowrap;
+
     }
 
-    .slogan-line .light {
-        color: #D9D9D9;
+
+    .slogan-line .word{
+
+        display:inline-block;
+
     }
 
-    .slogan-line .slogan-accent {
-        color: #7182CB !important;
-        -webkit-text-fill-color: #7182CB !important;
+
+    .slogan-line .light{
+
+        color:#D9D9D9;
+
     }
 
-}
-    /* =========================
-    CONTACTS
-    ========================= */
+
+    .slogan-line .slogan-accent{
+
+        color:#7182CB !important;
+
+        -webkit-text-fill-color:#7182CB !important;
+
+        -webkit-text-stroke:0 !important;
+
+        text-shadow:none !important;
+
+        filter:none !important;
+
+    }
+
+
+    /* =====================================================
+       MOBILE SLOGAN
+    ===================================================== */
+
+    .slogan-line{
+
+        margin-top:40px;
+
+        gap:.22em;
+
+        font-size:clamp(24px,7vw,36px);
+
+    }
+
+
+    .slogan-line .light{
+
+        color:#D9D9D9;
+
+    }
+
+
+    .slogan-line .slogan-accent{
+
+        color:#7182CB !important;
+
+        -webkit-text-fill-color:#7182CB !important;
+
+    }
+
+
+    /* =====================================================
+       CONTACTS
+    ===================================================== */
 
     .contact-bottom{
 
@@ -2167,7 +2172,6 @@ MOBILE
     }
 
 
-
     .contact-left{
 
         width:100%;
@@ -2177,13 +2181,11 @@ MOBILE
     }
 
 
-
     .contact-socials{
 
         gap:12px;
 
     }
-
 
 
     .contact-socials a{
@@ -2193,10 +2195,9 @@ MOBILE
     }
 
 
-
-    /* =========================
-    MOBILE EMAIL
-    ========================= */
+    /* =====================================================
+       MOBILE EMAIL
+    ===================================================== */
 
     .contact-input{
 
@@ -2205,7 +2206,6 @@ MOBILE
         max-width:none;
 
     }
-
 
 
     .contact-input input{
@@ -2219,7 +2219,6 @@ MOBILE
     }
 
 
-
     .contact-input button{
 
         width:42px;
@@ -2231,10 +2230,9 @@ MOBILE
     }
 
 
-
-    /* =========================
-    CONTACT RIGHT
-    ========================= */
+    /* =====================================================
+       CONTACT RIGHT
+    ===================================================== */
 
     .contact-right{
 
@@ -2245,13 +2243,11 @@ MOBILE
     }
 
 
-
     .contact-right span{
 
         font-size:18px;
 
     }
-
 
 
     .contact-right h2{
@@ -2261,10 +2257,9 @@ MOBILE
     }
 
 
-
-    /* =========================
-    FIXED LOGO — MOBILE
-    ========================= */
+    /* =====================================================
+       FIXED LOGO — MOBILE
+    ===================================================== */
 
     .logo-fixed{
 
@@ -2279,7 +2274,6 @@ MOBILE
     }
 
 
-
     .logo-fixed img{
 
         width:72%;
@@ -2289,10 +2283,9 @@ MOBILE
     }
 
 
-
-    /* =========================
-    FIXED LOGO — CONTACT
-    ========================= */
+    /* =====================================================
+       FIXED LOGO — CONTACT
+    ===================================================== */
 
     .logo-fixed.mobile-contact-position{
 
@@ -2305,10 +2298,9 @@ MOBILE
 }
 
 
-
-/* =========================
+/* =========================================================
 SMALL MOBILE
-========================= */
+========================================================= */
 
 @media(max-width:480px){
 
@@ -2317,7 +2309,6 @@ SMALL MOBILE
         font-size:34px;
 
     }
-
 
 
     .slogan-line{
@@ -2333,13 +2324,11 @@ SMALL MOBILE
     }
 
 
-
     .contact-socials a{
 
         font-size:30px;
 
     }
-
 
 
     .contact-right h2{
@@ -2349,7 +2338,6 @@ SMALL MOBILE
     }
 
 
-
     /* EMAIL */
 
     .contact-input{
@@ -2357,7 +2345,6 @@ SMALL MOBILE
         width:calc(100% - 60px);
 
     }
-
 
 
     /* FIXED LOGO */
@@ -2375,7 +2362,6 @@ SMALL MOBILE
     }
 
 
-
     .logo-fixed.mobile-contact-position{
 
         top:auto !important;
@@ -2385,9 +2371,11 @@ SMALL MOBILE
     }
 
 }
-/* =========================
+
+
+/* =========================================================
 PICTURE RESPONSIVE IMAGES
-========================= */
+========================================================= */
 
 .image-card picture{
 
@@ -2398,7 +2386,6 @@ PICTURE RESPONSIVE IMAGES
     display:block;
 
 }
-
 
 
 .image-card picture img{
@@ -2412,3 +2399,4 @@ PICTURE RESPONSIVE IMAGES
     display:block;
 
 }
+```
