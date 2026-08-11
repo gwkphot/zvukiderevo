@@ -1,0 +1,2414 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+body{
+
+    background:#d9d9d9;
+    text-rendering:optimizeLegibility;
+
+    font-family:'Inter',sans-serif;
+
+    color:#111;
+
+    overflow-x:hidden;
+
+}
+
+
+
+/* =========================
+MAIN STICKY STACK
+========================= */
+
+
+.main-stack{
+
+    position:relative;
+
+    width:100%;
+
+}
+
+
+
+.stack-card{
+
+    height:100vh;
+
+    position:sticky;
+
+    top:0;
+
+    overflow:hidden;
+
+}
+
+
+
+
+
+
+
+/* =========================
+HERO
+========================= */
+
+
+.hero-block{
+
+    background:#B9ED00;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+
+.hero-title{
+    contain:layout style;
+
+    font-family:'Montserrat',sans-serif;
+
+    font-weight:800;
+
+    font-size:clamp(70px,7vw,150px);
+
+    line-height:.82;
+
+    letter-spacing:-.07em;
+
+    color:#1A1A1A;
+
+    text-align:center;
+
+}
+
+/* =========================
+MANIFEST
+========================= */
+
+.manifest-block{
+
+    background:#d9d9d9;
+
+    width:100%;
+
+    min-height:100vh;
+
+    padding:8px 16px 16px;
+
+    display:flex;
+
+    align-items:flex-start;
+
+    box-sizing:border-box;
+
+}
+
+
+
+.manifest-content{
+
+    width:100%;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+}
+
+
+
+.manifest-content h1{
+
+    margin:0;
+
+    padding:0;
+
+    font-family:'Inter',sans-serif;
+
+    font-weight:600;
+
+    font-size:clamp(64px,6.5vw,110px);
+
+    line-height:.88;
+
+    letter-spacing:-.065em;
+
+    color:#333;
+
+}
+
+
+
+.manifest-content h1 .line{
+
+    display:block;
+
+    white-space:nowrap;
+
+}
+
+
+
+/* =========================
+TABLET
+========================= */
+
+@media(max-width:1024px){
+
+    .manifest-block{
+
+        padding:8px 14px 14px;
+
+    }
+
+
+    .manifest-content h1{
+
+        font-size:clamp(50px,6vw,72px);
+
+    }
+
+}
+
+
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .manifest-block{
+
+        min-height:auto;
+
+        padding:12px 12px 20px;
+
+        display:flex;
+
+        align-items:flex-start;
+
+        justify-content:flex-start;
+
+    }
+
+
+    .manifest-content{
+
+        width:100%;
+
+        height:auto;
+
+        margin:0;
+
+        padding:0;
+
+        display:flex;
+
+        align-items:flex-start;
+
+        justify-content:flex-start;
+
+    }
+
+
+    .manifest-content h1{
+
+        width:100%;
+
+        margin:0;
+
+        padding:0;
+
+        font-size:clamp(46px,12vw,64px);
+
+        line-height:.86;
+
+        letter-spacing:-.07em;
+
+    }
+
+
+    .manifest-content h1 .line{
+
+        white-space:normal;
+
+    }
+
+}
+
+
+
+/* =========================
+SMALL MOBILE
+========================= */
+
+@media(max-width:480px){
+
+    .manifest-block{
+
+        padding:10px 10px 18px;
+
+    }
+
+
+    .manifest-content h1{
+
+        font-size:42px;
+
+        line-height:.88;
+
+        letter-spacing:-.065em;
+
+    }
+
+}
+
+
+
+/* =========================
+IMAGE LAYERS
+========================= */
+
+.image-card{
+
+    width:100%;
+
+}
+
+
+
+.image-card img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+
+
+@media(max-width:768px){
+
+    .stack-card.image-card{
+
+        height:auto;
+
+        aspect-ratio:auto;
+
+    }
+
+
+    .stack-card.image-card picture{
+
+        display:block;
+
+        width:100%;
+
+        height:auto;
+
+    }
+
+
+    .stack-card.image-card img{
+
+        display:block;
+
+        width:100%;
+
+        height:auto;
+
+        object-fit:contain;
+
+    }
+
+}
+
+/* =========================
+IMAGE LAYERS
+========================= */
+
+
+.image-card{
+
+    width:100%;
+
+}
+
+
+
+.image-card img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+@media(max-width:768px){
+
+    .stack-card.image-card{
+
+        height:auto;
+
+        aspect-ratio:auto;
+
+    }
+
+
+    .stack-card.image-card picture{
+
+        display:block;
+
+        width:100%;
+
+        height:auto;
+
+    }
+
+
+    .stack-card.image-card img{
+
+        display:block;
+
+        width:100%;
+
+        height:auto;
+
+        object-fit:contain;
+
+    }
+
+}
+
+
+/* =========================
+DESCRIPTION
+========================= */
+
+.description-block{
+    width:100%;
+    min-height:100vh;
+
+    background:#bdbdb8;
+
+    padding:8px 16px 16px;
+
+    display:flex;
+    align-items:flex-start;
+    justify-content:flex-start;
+
+    box-sizing:border-box;
+}
+
+.description-block p{
+    margin:0;
+
+    width:100%;
+    max-width:none;
+
+    font-family:'Inter',sans-serif;
+    font-weight:500;
+    font-size:clamp(30px,3vw,54px);
+    line-height:1.05;
+    letter-spacing:-.04em;
+    color:#333;
+}
+
+
+
+/* Планшеты */
+@media (max-width:1024px){
+
+    .description-block{
+        padding:8px 14px 14px;
+    }
+
+    .description-block p{
+        font-size:clamp(28px,4vw,44px);
+    }
+
+}
+
+/* Телефоны */
+@media (max-width:768px){
+
+    .description-block{
+        padding:6px 10px 10px;
+    }
+
+    .description-block p{
+        font-size:clamp(24px,8vw,36px);
+    }
+
+}
+
+/* Очень маленькие телефоны */
+@media (max-width:480px){
+
+    .description-block{
+        padding:4px 8px 8px;
+    }
+
+    .description-block p{
+        font-size:24px;
+        line-height:1.03;
+    }
+
+}
+
+/* =========================
+CARDS
+========================= */
+
+.card-block{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    margin-bottom:18vh;
+
+}
+
+
+
+/* =========================
+HALF
+========================= */
+
+.half{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+}
+
+
+
+/* =========================
+COLORS
+========================= */
+
+.orange{
+
+    background:#FF6716;
+
+}
+
+
+
+.green{
+
+    background:#B9ED00;
+
+}
+
+
+
+.purple{
+
+    background:#7182CB;
+
+}
+
+
+
+/* =========================
+SYMBOLS
+========================= */
+
+.symbol img{
+
+    width:min(72vh,680px);
+
+    height:min(72vh,680px);
+
+    object-fit:contain;
+
+}
+
+
+
+/* =========================
+TEXT
+========================= */
+
+.text{
+
+    background:#d9d9d9;
+
+    padding:24px 28px 28px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    box-sizing:border-box;
+
+}
+
+
+
+/* =========================
+TITLE
+========================= */
+
+.text h2{
+
+    font-family:'Inter',sans-serif;
+
+    font-weight:600;
+
+    font-size:clamp(42px,3.2vw,60px);
+
+    line-height:.95;
+
+    letter-spacing:-.045em;
+
+    color:#333333;
+
+    margin:0;
+
+    max-width:700px;
+
+}
+
+
+
+/* =========================
+TEXT PARAGRAPH
+========================= */
+
+.text p{
+
+    margin:0;
+
+    max-width:700px;
+
+}
+
+
+/* =========================
+TEXT DESCRIPTION
+========================= */
+
+.text p{
+
+    font-family:'Inter',sans-serif;
+
+    font-weight:500;
+
+    font-size:clamp(28px,2.1vw,40px);
+
+    line-height:1.12;
+
+    letter-spacing:-.035em;
+
+    color:#333333;
+
+    margin:0;
+
+    max-width:850px;
+
+}
+
+
+
+/* =========================
+TABLET
+========================= */
+
+@media(max-width:1024px){
+
+
+    .text{
+
+        padding:50px;
+
+    }
+
+
+
+    .text h2{
+
+        font-size:48px;
+
+    }
+
+
+
+    .text p{
+
+        font-size:24px;
+
+    }
+
+
+
+    .symbol img{
+
+        width:75%;
+
+        height:75%;
+
+    }
+
+
+}
+
+
+
+/* =========================
+MOBILE CARDS
+========================= */
+
+@media(max-width:768px){
+
+
+    .card-block{
+
+        display:flex;
+
+        flex-direction:column;
+
+    }
+
+
+
+    .symbol{
+
+        height:50vh;
+
+        width:100%;
+
+        order:1;
+
+    }
+
+
+
+    .symbol img{
+
+        width:90%;
+
+        height:90%;
+
+    }
+
+
+
+    .text{
+
+        height:50vh;
+
+        width:100%;
+
+        order:2;
+
+        padding:18px 10px;
+
+        justify-content:space-between;
+
+        align-items:flex-start;
+
+    }
+
+
+
+    .text h2{
+
+        font-size:34px;
+
+        line-height:.92;
+
+        letter-spacing:-.055em;
+
+    }
+
+
+
+    .text p{
+
+        font-size:24px;
+
+        line-height:1.15;
+
+        letter-spacing:-.03em;
+
+    }
+
+
+}
+
+
+
+/* =========================
+SMALL MOBILE
+========================= */
+
+@media(max-width:480px){
+
+
+    .text{
+
+        padding:14px 8px;
+
+    }
+
+
+
+    .text h2{
+
+        font-size:30px;
+
+    }
+
+
+
+    .text p{
+
+        font-size:22px;
+
+        line-height:1.15;
+
+    }
+
+
+}
+
+/* =========================
+FIXED LOGO
+========================= */
+
+
+.logo-fixed{
+
+    position:fixed;
+
+    top:35px;
+
+    right:40px;
+
+    z-index:9999;
+
+    width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:2px solid #111;
+
+    background:transparent;
+
+    transition:.3s ease;
+
+    overflow:hidden;
+
+}
+
+
+
+.logo-fixed img{
+
+    width:75%;
+
+    height:75%;
+
+    object-fit:contain;
+
+    transition:.3s ease;
+
+}
+
+
+
+.logo-fixed:hover{
+
+    background:#111;
+
+}
+
+
+
+.logo-fixed:hover img{
+
+    filter:invert(1);
+
+}
+
+
+
+/* =========================
+   FIXED LOGO — GRAY STATE
+========================= */
+
+.logo-fixed.dark{
+    border-color:#D9D9D9;
+}
+
+.logo-fixed.dark img{
+    content:url("images/logo-gray.svg");
+}
+
+/* =========================
+   DARK LOGO — HOVER
+========================= */
+
+.logo-fixed.dark:hover{
+    background:#98E915;
+    border-color:#111;
+}
+
+.logo-fixed.dark:hover img{
+    content:url("images/logo.svg");
+    filter:none;
+}
+/* =========================
+   FIXED LOGO — MOBILE
+========================= */
+
+@media (max-width:768px){
+
+    .logo-fixed{
+        width:44px;
+        height:44px;
+        top:20px;
+        right:20px;
+    }
+
+    .logo-fixed img{
+        width:75%;
+        height:75%;
+    }
+
+}
+
+
+/* =========================
+MOBILE CONTACT LOGO POSITION
+========================= */
+
+@media(max-width:768px){
+
+    .logo-fixed.mobile-contact-position{
+
+        top:auto;
+
+        bottom:20px;
+
+    }
+
+}
+
+
+/* =========================
+LETTER ANIMATION
+========================= */
+
+
+.hero-letter-wrap{
+
+    display:inline-block;
+
+    overflow:hidden;
+
+    vertical-align:bottom;
+
+}
+
+
+
+.hero-letter{
+    will-change:transform;
+
+    display:inline-block;
+
+}
+
+
+
+
+
+
+
+/* =========================
+МАСТЕР-КЛАССЫ
+========================= */
+
+.workshops-block{
+
+    width:100%;
+
+    min-height:100vh;
+
+    background:#D9D9D9;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    padding:8px 16px 16px;
+
+    box-sizing:border-box;
+
+}
+
+
+
+.workshops-block h2{
+
+    margin:0 0 24px;
+
+    font-family:'Inter',sans-serif;
+
+    font-weight:600;
+
+    font-size:clamp(50px,4.4vw,76px);
+
+    line-height:.95;
+
+    letter-spacing:-.055em;
+
+    color:#7182CB;
+
+}
+
+
+
+.workshops-block p{
+
+    margin:0;
+
+    font-family:'Inter',sans-serif;
+
+    font-weight:500;
+
+    font-size:clamp(30px,2.4vw,44px);
+
+    line-height:1.1;
+
+    letter-spacing:-.035em;
+
+    width:100%;
+
+    max-width:none;
+
+    color:#292929;
+
+}
+
+
+
+/* =========================
+TABLET
+========================= */
+
+@media (max-width:1024px){
+
+    .workshops-block{
+
+        padding:8px 14px 20px;
+
+    }
+
+
+
+    .workshops-block h2{
+
+        font-size:clamp(44px,5vw,60px);
+
+        margin-bottom:20px;
+
+    }
+
+
+
+    .workshops-block p{
+
+        font-size:clamp(26px,3vw,34px);
+
+    }
+
+}
+
+
+
+/* =========================
+MOBILE
+========================= */
+
+@media (max-width:768px){
+
+    .workshops-block{
+
+        padding:6px 10px 40px;
+
+    }
+
+
+
+    .workshops-block h2{
+
+        font-size:38px;
+
+        margin-bottom:16px;
+
+    }
+
+
+
+    .workshops-block p{
+
+        font-size:21px;
+
+        line-height:1.12;
+
+    }
+
+}
+
+
+
+/* =========================
+SMALL MOBILE
+========================= */
+
+@media (max-width:480px){
+
+    .workshops-block{
+
+        padding:4px 8px 40px;
+
+    }
+
+
+
+    .workshops-block h2{
+
+        font-size:34px;
+
+        margin-bottom:14px;
+
+    }
+
+
+
+    .workshops-block p{
+
+        font-size:19px;
+
+        line-height:1.1;
+
+    }
+
+}
+
+
+
+/* =========================
+ДЖЕМЫ
+========================= */
+
+.jams-block{
+
+    background:#D9D9D9;
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    padding:8px 16px 16px;
+
+    box-sizing:border-box;
+
+}
+
+
+
+.jams-block h2{
+
+    font-family:'Inter', sans-serif;
+
+    font-weight:600;
+
+    font-size:clamp(52px,4.5vw,78px);
+
+    line-height:.95;
+
+    letter-spacing:-.055em;
+
+    margin:0 0 24px;
+
+    color:#FF6716;
+
+}
+
+
+
+.jams-block p{
+
+    font-family:'Inter', sans-serif;
+
+    font-weight:500;
+
+    font-size:clamp(30px,2.45vw,46px);
+
+    line-height:1.12;
+
+    letter-spacing:-.035em;
+
+    width:100%;
+
+    max-width:none;
+
+    margin:0;
+
+    color:#292929;
+
+}
+
+
+
+/* =========================
+TABLET
+========================= */
+
+@media (max-width:1024px){
+
+    .jams-block{
+
+        padding:8px 14px 20px;
+
+    }
+
+
+
+    .jams-block h2{
+
+        font-size:clamp(46px,5vw,64px);
+
+        margin-bottom:20px;
+
+    }
+
+
+
+    .jams-block p{
+
+        font-size:clamp(28px,3.2vw,38px);
+
+    }
+
+}
+
+
+
+/* =========================
+MOBILE
+========================= */
+
+@media (max-width:768px){
+
+    .jams-block{
+
+        padding:6px 10px 40px;
+
+    }
+
+
+
+    .jams-block h2{
+
+        font-size:42px;
+
+        margin-bottom:16px;
+
+    }
+
+
+
+    .jams-block p{
+
+        font-size:21px;
+
+        line-height:1.12;
+
+    }
+
+}
+
+
+
+/* =========================
+SMALL MOBILE
+========================= */
+
+@media (max-width:480px){
+
+    .jams-block{
+
+        padding:4px 8px 40px;
+
+    }
+
+
+
+    .jams-block h2{
+
+        font-size:36px;
+
+        margin-bottom:14px;
+
+    }
+
+
+
+    .jams-block p{
+
+        font-size:19px;
+
+        line-height:1.1;
+
+    }
+
+}
+
+
+/* =========================
+РАСПИСАНИЕ
+========================= */
+
+.meetings-block{
+    background:#292929;
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+
+    padding:8px 16px 16px;
+
+    box-sizing:border-box;
+}
+
+.meetings-block p{
+    font-family:'Inter', sans-serif;
+    font-weight:500;
+
+    /* немного увеличил */
+    font-size:clamp(30px,2.45vw,46px);
+
+    line-height:1.12;
+    letter-spacing:-.035em;
+
+    width:100%;
+    max-width:none;
+
+    margin:0;
+
+    color:#D9D9D9;
+}
+
+
+/* =========================
+TABLET
+========================= */
+
+@media (max-width:1024px){
+
+    .meetings-block{
+        padding:8px 14px 20px;
+    }
+
+    .meetings-block p{
+        font-size:clamp(28px,3.2vw,38px);
+    }
+
+}
+
+
+/* =========================
+MOBILE
+========================= */
+
+@media (max-width:768px){
+
+    .meetings-block{
+        padding:6px 10px 60px;
+        /* запас снизу для комфортного скролла */
+    }
+
+    .meetings-block p{
+        font-size:24px;
+        line-height:1.15;
+    }
+
+}
+
+
+/* =========================
+SMALL MOBILE
+========================= */
+
+@media (max-width:480px){
+
+    .meetings-block{
+        padding:4px 8px 70px;
+    }
+
+    .meetings-block p{
+        font-size:22px;
+    }
+
+}
+
+/* =========================
+GALLERY
+========================= */
+
+.gallery-card{
+
+    background:#292929;
+
+}
+
+
+
+/* =========================
+GALLERY CONTAINER
+========================= */
+
+.gallery-container{
+
+    width:100%;
+
+    height:100%;
+
+    position:relative;
+
+}
+
+
+
+.gallery-container picture{
+
+    display:block;
+
+    width:100%;
+
+    height:100%;
+
+}
+
+
+
+.gallery-container img{
+    will-change:opacity;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:opacity .45s ease, transform .45s ease;
+
+}
+
+
+
+/* =========================
+GALLERY UI
+========================= */
+
+.gallery-ui{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 55px;
+
+    pointer-events:none;
+
+}
+
+
+
+.gallery-arrow{
+
+    pointer-events:auto;
+
+    background:none;
+
+    border:none;
+
+    color:#D9D9D9;
+
+    font-family:Arial, sans-serif;
+
+    font-size:90px;
+
+    font-weight:300;
+
+    line-height:1;
+
+    cursor:pointer;
+
+    opacity:.7;
+
+    transition:.25s ease;
+
+}
+
+
+
+.gallery-arrow:hover{
+
+    opacity:1;
+
+    transform:scale(1.08);
+
+}
+
+
+
+.gallery-prev{
+
+    transform:translateX(0);
+
+}
+
+
+
+.gallery-next{
+
+    transform:translateX(0);
+
+}
+
+
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .gallery-card{
+
+        width:100%;
+
+        aspect-ratio:1 / 1;
+
+        min-height:0;
+
+        height:auto;
+
+    }
+
+
+
+    .gallery-container{
+
+        width:100%;
+
+        height:100%;
+
+        aspect-ratio:1 / 1;
+
+        position:relative;
+
+        overflow:hidden;
+
+    }
+
+
+
+    .gallery-container picture{
+
+        display:block;
+
+        width:100%;
+
+        height:100%;
+
+    }
+
+
+
+    .gallery-container img{
+    will-change:opacity;
+
+        width:100%;
+
+        height:100%;
+
+        object-fit:cover;
+
+        display:block;
+
+    }
+
+
+
+    /* =========================
+    GALLERY UI
+    ========================= */
+
+    .gallery-ui{
+
+        position:absolute;
+
+        inset:0;
+
+        width:100%;
+
+        height:100%;
+
+        padding:0 20px;
+
+        box-sizing:border-box;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:space-between;
+
+    }
+
+
+
+    .gallery-arrow{
+
+        font-size:60px;
+
+        opacity:.7;
+
+    }
+
+
+
+    .gallery-progress{
+
+        margin:0 18px;
+
+    }
+
+
+
+    #gallery-counter{
+
+        font-size:15px;
+
+    }
+
+}
+
+/* =========================
+CONTACT BLOCK
+========================= */
+
+.contact-block{
+
+    background:#292929;
+
+    color:#D9D9D9;
+
+    display:flex;
+
+    flex-direction:column;
+
+    min-height:100vh;
+
+    padding:70px 80px;
+
+    box-sizing:border-box;
+
+    overflow:visible;
+
+}
+
+
+
+/* =========================
+CONTACT BIG LOGO TOP
+========================= */
+
+.contact-end-logo{
+
+    width:100%;
+
+    text-align:center;
+
+    margin:0;
+
+    padding:0;
+
+    transform:translateY(-0.08em);
+
+    font-family:'Montserrat',sans-serif;
+
+    font-weight:800;
+
+    font-size:clamp(55px,8.5vw,170px);
+
+    line-height:.75;
+
+    letter-spacing:-.065em;
+
+    color:#D9D9D9;
+
+    white-space:nowrap;
+
+    transition:.35s ease;
+
+}
+
+
+
+.contact-end-logo:hover{
+
+    color:#98E915;
+
+}
+
+
+
+/* =========================
+SLOGAN
+========================= */
+
+.slogan-line{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:.28em;
+
+    margin-top:60px;
+
+    font-family:'Inter',sans-serif;
+
+    font-weight:700;
+
+    font-size:clamp(28px,2.5vw,48px);
+
+    line-height:1;
+
+    letter-spacing:-.055em;
+
+    white-space:nowrap;
+
+}
+
+
+
+.slogan-line .word{
+
+    display:inline-block;
+
+}
+
+
+
+.slogan-line .green{
+
+    color:#7182CB;
+
+}
+
+
+
+/* =========================
+CONTACT BOTTOM
+========================= */
+
+.contact-bottom{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-end;
+
+    margin-top:auto;
+
+    background:#292929;
+
+}
+
+
+
+.contact-left{
+
+    width:40%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:34px;
+
+}
+
+
+
+.contact-socials{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+
+
+.contact-socials a{
+
+    font-family:'Inter',sans-serif;
+
+    font-weight:600;
+
+    font-size:clamp(34px,2.6vw,54px);
+
+    line-height:.95;
+
+    letter-spacing:-.045em;
+
+    color:#D9D9D9;
+
+    text-decoration:none;
+
+    transition:.25s ease;
+
+}
+
+
+
+.contact-socials a:nth-child(1):hover{
+
+    color:#FF6716;
+
+}
+
+
+
+.contact-socials a:nth-child(2):hover{
+
+    color:#98E915;
+
+}
+
+
+
+.contact-socials a:nth-child(3):hover{
+
+    color:#7182CB;
+
+}
+
+
+
+/* =========================
+EMAIL
+========================= */
+
+.contact-input{
+
+    display:flex;
+
+    width:100%;
+
+    max-width:460px;
+
+}
+
+
+
+.contact-input input{
+
+    flex:1;
+
+    min-width:0;
+
+    background:none;
+
+    border:none;
+
+    border-bottom:2px solid #D9D9D9;
+
+    color:#D9D9D9;
+
+    font-size:24px;
+
+    padding:14px 0;
+
+    outline:none;
+
+}
+
+
+
+.contact-input input::placeholder{
+
+    color:#777;
+
+}
+
+
+
+.contact-input button{
+
+    width:50px;
+
+    flex-shrink:0;
+
+    background:none;
+
+    border:none;
+
+    border-bottom:2px solid #D9D9D9;
+
+    color:#D9D9D9;
+
+    font-size:42px;
+
+}
+
+
+
+.contact-input button:hover{
+
+    color:#98E915;
+
+    border-color:#98E915;
+
+}
+
+
+
+/* =========================
+CONTACT RIGHT
+========================= */
+
+.contact-right{
+
+    text-align:right;
+
+}
+
+
+
+.contact-right span{
+
+    display:block;
+
+    color:#8e8e8e;
+
+    font-size:22px;
+
+    margin-bottom:14px;
+
+}
+
+
+
+.contact-right h2{
+
+    font-family:'Inter',sans-serif;
+
+    font-weight:600;
+
+    font-size:clamp(38px,3.5vw,64px);
+
+    line-height:.9;
+
+    letter-spacing:-.06em;
+
+}
+
+
+
+/* =========================
+TABLET
+========================= */
+
+@media(max-width:1024px){
+
+    .contact-block{
+
+        padding:60px 50px;
+
+    }
+
+
+
+    .contact-left{
+
+        width:45%;
+
+    }
+
+
+
+    .slogan-line{
+
+        font-size:clamp(26px,3vw,42px);
+
+    }
+
+}
+
+
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .contact-block{
+
+        padding:0;
+
+        min-height:100svh;
+
+        background:#292929;
+
+        display:flex;
+
+        flex-direction:column;
+
+        overflow:visible;
+
+    }
+
+
+
+    /* =========================
+    CONTACT BIG LOGO
+    ========================= */
+
+    .contact-end-logo{
+
+        width:100%;
+
+        display:flex;
+
+        justify-content:center;
+
+        align-items:flex-start;
+
+        padding:32px 8px 0;
+
+        box-sizing:border-box;
+
+        transform:none;
+
+        font-size:clamp(38px,9.5vw,58px);
+
+        line-height:.8;
+
+        letter-spacing:-.065em;
+
+        will-change:transform,opacity;
+
+    }
+
+
+
+/* =========================================================
+   CONTACT SLOGAN
+========================================================= */
+
+.slogan-line {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .28em;
+    margin-top: 60px;
+
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: clamp(28px, 2.5vw, 48px);
+    line-height: 1;
+    letter-spacing: -.055em;
+    white-space: nowrap;
+}
+
+.slogan-line .word {
+    display: inline-block;
+}
+
+.slogan-line .light {
+    color: #D9D9D9;
+}
+
+.slogan-line .slogan-accent {
+    color: #7182CB !important;
+    -webkit-text-fill-color: #7182CB !important;
+    -webkit-text-stroke: 0 !important;
+    text-shadow: none !important;
+    filter: none !important;
+}
+
+@media (max-width: 768px) {
+
+    .slogan-line {
+        margin-top: 40px;
+        gap: .22em;
+        font-size: clamp(24px, 7vw, 36px);
+    }
+
+    .slogan-line .light {
+        color: #D9D9D9;
+    }
+
+    .slogan-line .slogan-accent {
+        color: #7182CB !important;
+        -webkit-text-fill-color: #7182CB !important;
+    }
+
+}
+    /* =========================
+    CONTACTS
+    ========================= */
+
+    .contact-bottom{
+
+        width:100%;
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:35px;
+
+        margin-top:auto;
+
+        padding:0 16px 24px;
+
+        background:#292929;
+
+        box-sizing:border-box;
+
+    }
+
+
+
+    .contact-left{
+
+        width:100%;
+
+        gap:28px;
+
+    }
+
+
+
+    .contact-socials{
+
+        gap:12px;
+
+    }
+
+
+
+    .contact-socials a{
+
+        font-size:32px;
+
+    }
+
+
+
+    /* =========================
+    MOBILE EMAIL
+    ========================= */
+
+    .contact-input{
+
+        width:calc(100% - 70px);
+
+        max-width:none;
+
+    }
+
+
+
+    .contact-input input{
+
+        min-width:0;
+
+        width:100%;
+
+        font-size:20px;
+
+    }
+
+
+
+    .contact-input button{
+
+        width:42px;
+
+        flex-shrink:0;
+
+        font-size:36px;
+
+    }
+
+
+
+    /* =========================
+    CONTACT RIGHT
+    ========================= */
+
+    .contact-right{
+
+        width:100%;
+
+        text-align:left;
+
+    }
+
+
+
+    .contact-right span{
+
+        font-size:18px;
+
+    }
+
+
+
+    .contact-right h2{
+
+        font-size:42px;
+
+    }
+
+
+
+    /* =========================
+    FIXED LOGO — MOBILE
+    ========================= */
+
+    .logo-fixed{
+
+        width:46px;
+
+        height:46px;
+
+        top:24px;
+
+        right:16px;
+
+    }
+
+
+
+    .logo-fixed img{
+
+        width:72%;
+
+        height:72%;
+
+    }
+
+
+
+    /* =========================
+    FIXED LOGO — CONTACT
+    ========================= */
+
+    .logo-fixed.mobile-contact-position{
+
+        top:auto !important;
+
+        bottom:20px;
+
+    }
+
+}
+
+
+
+/* =========================
+SMALL MOBILE
+========================= */
+
+@media(max-width:480px){
+
+    .contact-end-logo{
+
+        font-size:34px;
+
+    }
+
+
+
+    .slogan-line{
+
+        font-size:clamp(22px,6.5vw,28px);
+
+        gap:.14em;
+
+        padding-top:90px;
+
+        letter-spacing:-.07em;
+
+    }
+
+
+
+    .contact-socials a{
+
+        font-size:30px;
+
+    }
+
+
+
+    .contact-right h2{
+
+        font-size:38px;
+
+    }
+
+
+
+    /* EMAIL */
+
+    .contact-input{
+
+        width:calc(100% - 60px);
+
+    }
+
+
+
+    /* FIXED LOGO */
+
+    .logo-fixed{
+
+        width:42px;
+
+        height:42px;
+
+        top:20px;
+
+        right:14px;
+
+    }
+
+
+
+    .logo-fixed.mobile-contact-position{
+
+        top:auto !important;
+
+        bottom:16px;
+
+    }
+
+}
+/* =========================
+PICTURE RESPONSIVE IMAGES
+========================= */
+
+.image-card picture{
+
+    width:100%;
+
+    height:100%;
+
+    display:block;
+
+}
+
+
+
+.image-card picture img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+}
