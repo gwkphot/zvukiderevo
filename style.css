@@ -120,11 +120,16 @@ HERO
 
     background:#B9ED00;
 
+    width:100%;
+    min-height:100vh;
+
     display:flex;
-
     align-items:center;
-
     justify-content:center;
+
+    box-sizing:border-box;
+
+    overflow:hidden;
 
 }
 
@@ -132,6 +137,12 @@ HERO
 .hero-title{
 
     contain:layout style;
+
+    width:100%;
+    margin:0;
+    padding:0;
+
+    box-sizing:border-box;
 
     font-family:'Montserrat',sans-serif;
 
@@ -148,6 +159,32 @@ HERO
     text-align:center;
 
 }
+
+
+/* =========================================================
+HERO — MOBILE
+========================================================= */
+
+@media (max-width:600px){
+
+    .hero-title{
+
+        width:100%;
+
+        margin:0;
+
+        padding:0 12px;
+
+        box-sizing:border-box;
+
+        text-align:center;
+
+        letter-spacing:-.06em;
+
+    }
+
+}
+
 
 
 /* =========================================================
