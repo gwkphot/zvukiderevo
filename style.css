@@ -2035,17 +2035,17 @@ CONTACT — MOBILE
 
         align-items:flex-start;
 
-        padding:8px 2px 0;
+        padding:8px 6px 0;
 
         box-sizing:border-box;
 
         transform:none;
 
-        font-size:clamp(48px,12.2vw,72px);
+        font-size:clamp(42px,10.8vw,64px);
 
         line-height:.8;
 
-        letter-spacing:-.07em;
+        letter-spacing:-.075em;
 
         white-space:nowrap;
 
@@ -2070,15 +2070,15 @@ CONTACT — MOBILE
 
         align-items:center;
 
-        gap:.20em;
+        gap:.18em;
 
-        margin-top:34px;
+        margin-top:30px;
 
         font-family:'Inter',sans-serif;
 
         font-weight:700;
 
-        font-size:clamp(21px,6.2vw,32px);
+        font-size:clamp(18px,5.5vw,28px);
 
         line-height:1;
 
@@ -2174,7 +2174,9 @@ CONTACT — MOBILE
 
     .contact-input{
 
-        width:calc(100% - 70px);
+        display:flex;
+
+        width:100%;
 
         max-width:none;
 
@@ -2205,7 +2207,7 @@ CONTACT — MOBILE
 
     /* =====================================================
        CONTACT RIGHT
-       СЕВКАБЕЛЬ ПОРТ
+       СЕВКАБЕЛЬ-ПОРТ
     ===================================================== */
 
     .contact-right{
@@ -2219,20 +2221,42 @@ CONTACT — MOBILE
 
     .contact-right span{
 
+        display:block;
+
+        width:100%;
+
+        color:#8e8e8e;
+
+        font-family:'Inter',sans-serif;
+
+        font-weight:500;
+
         font-size:15px;
 
+        line-height:1;
+
         margin-bottom:10px;
+
+        white-space:nowrap;
 
     }
 
 
     .contact-right h2{
 
+        width:100%;
+
+        font-family:'Inter',sans-serif;
+
+        font-weight:700;
+
         font-size:36px;
 
         line-height:.9;
 
         letter-spacing:-.06em;
+
+        white-space:nowrap;
 
     }
 
