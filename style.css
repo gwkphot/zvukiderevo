@@ -1,4 +1,3 @@
-```css
 /* =========================================================
 PILIM И PILIM
 LOCAL FONT SYSTEM
@@ -77,6 +76,8 @@ body{
     text-rendering:optimizeLegibility;
 
     font-family:'Inter',sans-serif;
+
+    font-weight:500;
 
     color:#111;
 
@@ -218,6 +219,17 @@ MANIFEST
 
 
 /* =========================================================
+MANIFEST VISIBILITY
+========================================================= */
+
+.manifest-mobile{
+
+    display:none;
+
+}
+
+
+/* =========================================================
 TABLET
 ========================================================= */
 
@@ -296,6 +308,140 @@ MOBILE
     }
 
 
+    /* desktop version скрываем */
+
+    .manifest-desktop{
+
+        display:none;
+
+    }
+
+
+    /* mobile version показываем */
+
+    .manifest-mobile{
+
+        display:block;
+
+    }
+
+
+    .manifest-mobile .line{
+
+        display:block;
+
+        white-space:nowrap;
+
+    }
+
+}
+
+
+/* =========================================================
+SMALL MOBILE
+========================================================= */
+
+@media(max-width:480px){
+
+    .manifest-block{
+
+        padding:10px 10px 18px;
+
+    }
+
+
+    .manifest-content h1{
+
+        font-size:42px;
+
+        line-height:.88;
+
+        letter-spacing:-.065em;
+
+    }
+
+}
+/* =========================================================
+TABLET
+========================================================= */
+
+@media(max-width:1024px){
+
+    .manifest-block{
+
+        padding:8px 14px 14px;
+
+    }
+
+
+    .manifest-content h1{
+
+        font-size:clamp(50px,6vw,72px);
+
+    }
+
+}
+
+
+/* =========================================================
+MOBILE
+========================================================= */
+
+@media(max-width:768px){
+
+    .manifest-block{
+
+        min-height:auto;
+
+        padding:12px 12px 20px;
+
+        display:flex;
+
+        align-items:flex-start;
+
+        justify-content:flex-start;
+
+    }
+
+
+    .manifest-content{
+
+        width:100%;
+
+        height:auto;
+
+        margin:0;
+
+        padding:0;
+
+        display:flex;
+
+        align-items:flex-start;
+
+        justify-content:flex-start;
+
+    }
+
+
+    .manifest-content h1{
+
+        width:100%;
+
+        margin:0;
+
+        padding:0;
+
+        font-size:clamp(46px,12vw,64px);
+
+        line-height:.86;
+
+        letter-spacing:-.07em;
+
+        font-weight:500;
+
+    }
+
+
     .manifest-content h1 .line{
 
         white-space:normal;
@@ -325,6 +471,8 @@ SMALL MOBILE
         line-height:.88;
 
         letter-spacing:-.065em;
+
+        font-weight:500;
 
     }
 
@@ -391,6 +539,7 @@ IMAGE LAYERS
 
 }
 
+
 /* =========================================================
 DESCRIPTION
 ========================================================= */
@@ -414,6 +563,7 @@ DESCRIPTION
     box-sizing:border-box;
 
 }
+
 
 .description-block p{
 
@@ -477,6 +627,8 @@ DESCRIPTION — MOBILE
 
         font-size:clamp(24px,8vw,36px);
 
+        font-weight:500;
+
     }
 
 }
@@ -501,9 +653,12 @@ DESCRIPTION — SMALL MOBILE
 
         line-height:1.03;
 
+        font-weight:500;
+
     }
 
 }
+
 
 /* =========================================================
 CARDS
@@ -667,12 +822,16 @@ TABLET
 
         font-size:48px;
 
+        font-weight:700;
+
     }
 
 
     .text p{
 
         font-size:24px;
+
+        font-weight:500;
 
     }
 
@@ -748,6 +907,8 @@ MOBILE CARDS
 
         letter-spacing:-.055em;
 
+        font-weight:700;
+
     }
 
 
@@ -758,6 +919,8 @@ MOBILE CARDS
         line-height:1.15;
 
         letter-spacing:-.03em;
+
+        font-weight:500;
 
     }
 
@@ -781,6 +944,8 @@ SMALL MOBILE
 
         font-size:30px;
 
+        font-weight:700;
+
     }
 
 
@@ -789,6 +954,8 @@ SMALL MOBILE
         font-size:22px;
 
         line-height:1.15;
+
+        font-weight:500;
 
     }
 
@@ -967,6 +1134,7 @@ LETTER ANIMATION
 
 }
 
+
 /* =========================================================
 МАСТЕР-КЛАССЫ
 ========================================================= */
@@ -991,6 +1159,7 @@ LETTER ANIMATION
 
 }
 
+
 .workshops-block h2{
 
     margin:0 0 8px;
@@ -1008,6 +1177,7 @@ LETTER ANIMATION
     color:#7182CB;
 
 }
+
 
 .workshops-block p{
 
@@ -1035,6 +1205,7 @@ LETTER ANIMATION
 
 }
 
+
 .workshops-block p + p{
 
     padding-left:1em;
@@ -1054,19 +1225,25 @@ WORKSHOPS — TABLET
 
     }
 
+
     .workshops-block h2{
 
         font-size:clamp(44px,5vw,60px);
 
         margin-bottom:8px;
 
+        font-weight:700;
+
     }
+
 
     .workshops-block p{
 
         padding-right:38px;
 
         font-size:clamp(26px,3vw,34px);
+
+        font-weight:500;
 
     }
 
@@ -1081,23 +1258,38 @@ WORKSHOPS — MOBILE
 
     .workshops-block{
 
-        padding:6px 10px 40px;
+        padding:6px 14px 40px;
 
     }
+
 
     .workshops-block h2{
 
-        font-size:38px;
+        font-size:35px;
 
         margin-bottom:16px;
 
+        font-weight:700;
+
     }
+
 
     .workshops-block p{
 
-        font-size:21px;
+        padding:0;
+
+        font-size:19px;
 
         line-height:1.12;
+
+        font-weight:500;
+
+    }
+
+
+    .workshops-block p + p{
+
+        padding-left:0;
 
     }
 
@@ -1112,23 +1304,38 @@ WORKSHOPS — SMALL MOBILE
 
     .workshops-block{
 
-        padding:4px 8px 40px;
+        padding:4px 12px 40px;
 
     }
+
 
     .workshops-block h2{
 
-        font-size:34px;
+        font-size:32px;
 
         margin-bottom:14px;
 
+        font-weight:700;
+
     }
+
 
     .workshops-block p{
 
-        font-size:19px;
+        padding:0;
+
+        font-size:18px;
 
         line-height:1.1;
+
+        font-weight:500;
+
+    }
+
+
+    .workshops-block p + p{
+
+        padding-left:0;
 
     }
 
@@ -1159,6 +1366,7 @@ WORKSHOPS — SMALL MOBILE
 
 }
 
+
 .jams-block h2{
 
     font-family:'Inter',sans-serif;
@@ -1176,6 +1384,7 @@ WORKSHOPS — SMALL MOBILE
     color:#FF6716;
 
 }
+
 
 .jams-block p{
 
@@ -1203,6 +1412,7 @@ WORKSHOPS — SMALL MOBILE
 
 }
 
+
 .jams-block p + p{
 
     padding-left:1em;
@@ -1222,19 +1432,25 @@ JAMS — TABLET
 
     }
 
+
     .jams-block h2{
 
         font-size:clamp(46px,5vw,64px);
 
         margin-bottom:8px;
 
+        font-weight:700;
+
     }
+
 
     .jams-block p{
 
         padding-right:38px;
 
         font-size:clamp(28px,3.2vw,38px);
+
+        font-weight:500;
 
     }
 
@@ -1249,23 +1465,38 @@ JAMS — MOBILE
 
     .jams-block{
 
-        padding:6px 10px 40px;
+        padding:6px 14px 40px;
 
     }
+
 
     .jams-block h2{
 
-        font-size:42px;
+        font-size:39px;
 
         margin-bottom:16px;
 
+        font-weight:700;
+
     }
+
 
     .jams-block p{
 
-        font-size:21px;
+        padding:0;
+
+        font-size:19px;
 
         line-height:1.12;
+
+        font-weight:500;
+
+    }
+
+
+    .jams-block p + p{
+
+        padding-left:0;
 
     }
 
@@ -1280,27 +1511,43 @@ JAMS — SMALL MOBILE
 
     .jams-block{
 
-        padding:4px 8px 40px;
+        padding:4px 12px 40px;
 
     }
+
 
     .jams-block h2{
 
-        font-size:36px;
+        font-size:33px;
 
         margin-bottom:14px;
 
+        font-weight:700;
+
     }
+
 
     .jams-block p{
 
-        font-size:19px;
+        padding:0;
+
+        font-size:18px;
 
         line-height:1.1;
+
+        font-weight:500;
+
+    }
+
+
+    .jams-block p + p{
+
+        padding-left:0;
 
     }
 
 }
+
 /* =========================================================
 РАСПИСАНИЕ
 ========================================================= */
@@ -1324,6 +1571,7 @@ JAMS — SMALL MOBILE
     box-sizing:border-box;
 
 }
+
 
 .meetings-block p{
 
@@ -1365,6 +1613,8 @@ MEETINGS — TABLET
 
         font-size:clamp(28px,3.2vw,38px);
 
+        font-weight:500;
+
     }
 
 }
@@ -1378,7 +1628,7 @@ MEETINGS — MOBILE
 
     .meetings-block{
 
-        padding:28px;
+        padding:30vh 28px 28px;
 
     }
 
@@ -1388,6 +1638,8 @@ MEETINGS — MOBILE
         font-size:24px;
 
         line-height:1.15;
+
+        font-weight:500;
 
     }
 
@@ -1402,7 +1654,7 @@ MEETINGS — SMALL MOBILE
 
     .meetings-block{
 
-        padding:20px;
+        padding:25vh 20px 20px;
 
     }
 
@@ -1411,10 +1663,11 @@ MEETINGS — SMALL MOBILE
 
         font-size:22px;
 
+        font-weight:500;
+
     }
 
 }
-
 /* =========================================================
 GALLERY
 ========================================================= */
@@ -1644,6 +1897,7 @@ GALLERY — MOBILE
     }
 
 }
+
 
 /* =========================================================
 CONTACT BLOCK
@@ -1969,6 +2223,34 @@ CONTACT RIGHT
 
 
 /* =========================================================
+СЕВКАБЕЛЬ-ПОРТ — LINK
+========================================================= */
+
+.sevcable-link{
+
+    color:inherit;
+
+    font:inherit;
+
+    letter-spacing:inherit;
+
+    line-height:inherit;
+
+    text-decoration:none;
+
+    transition:color .25s ease;
+
+}
+
+
+.sevcable-link:hover{
+
+    color:#98E915;
+
+}
+
+
+/* =========================================================
 CONTACT — TABLET
 ========================================================= */
 
@@ -2263,7 +2545,34 @@ CONTACT — MOBILE
 
     }
 
+
+    /* =====================================================
+       СЕВКАБЕЛЬ-ПОРТ — MOBILE LINK
+    ===================================================== */
+
+    .sevcable-link{
+
+        color:inherit;
+
+        font:inherit;
+
+        letter-spacing:inherit;
+
+        line-height:inherit;
+
+        text-decoration:none;
+
+    }
+
+
+    .sevcable-link:hover{
+
+        color:#98E915;
+
+    }
+
 }
+
 
 /* =========================================================
 PICTURE RESPONSIVE IMAGES
@@ -2291,4 +2600,3 @@ PICTURE RESPONSIVE IMAGES
     display:block;
 
 }
-```
