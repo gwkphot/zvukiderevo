@@ -2150,7 +2150,7 @@ CONTACT — MOBILE
 
     .contact-left{
 
-        width:calc(100% - 48px);
+        width:calc(100% - 80px);
 
         gap:28px;
 
@@ -2215,7 +2215,7 @@ CONTACT — MOBILE
 
     .contact-right{
 
-        width:calc(100% - 48px);
+        width:calc(100% - 80px);
 
         text-align:left;
 
